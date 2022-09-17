@@ -178,3 +178,59 @@ int main(void) {
 ---
 
 ## Floating point numbers
+
+Floating point types can represent a much larger set of values than integers can, and can also represent fractions, something that integers can't do.
+
+Using floating point numbers, we represent numbers as decimal numbers times powers of 10.
+
+You might see floating point numbers written as
+
+* `1.29e-3`
+* `-2.3e+5`
+
+and in other seemingly weird ways.
+
+The following types:
+
+* `float`
+* `double`
+* `long double`
+
+are used to represent numbers with decimal points (floating point types). All can represent both positive and negative numbers.
+
+The minimum requirements for any C implementation is that `float` can represent a range between `10^-37` and `10^+37`, and is typically implemented using 32 bits. `double` can represent a bigger set of numbers. `long double` can hold even more numbers.
+
+On a modern Mac, a `float` is represented in 32 bits, and has a precision of 24 significant bits. 8 bits are used to encode the exponent.
+
+A `double` number is represented in 64 bits, with a precision of 53 significant bits. 11 bits are used to encode the exponent.
+
+The type `long double` is represented in 80 bits, has a precision of 64 significant bits. 15 bits are used to encode the exponent.
+
+On your specific computer, you can determine the specific size of the types using this scipt (see `size_types.c`):
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    printf("char size: %lu bytes\n", sizeof(char));
+    printf("int size: %lu bytes \n", sizeof(int));
+    printf("short size: %lu bytes\n", sizeof(short));
+    printf("long size: %lu bytes\n", sizeof(long));
+    printf("float size: %lu bytes\n", sizeof(float));
+    printf("double size: %lu bytes\n", sizeof(double));
+    printf("long double size: %lu bytes\n", sizeof(long double));
+}
+```
+
+and the output:
+
+```bash
+$ ./size_types
+> char size: 1 bytes
+> int size: 4 bytes
+> short size: 2 bytes
+> long size: 8 bytes
+> float size: 4 bytes
+> double size: 8 bytes
+> long double size: 8 bytes
+```
