@@ -39,7 +39,7 @@ Unary operators only take one operand:
 | `++`     | Increment | `a++` or `++a` |
 | `--`     | Decrement | `a--` or `--a` |
 
-The difference between `a++` and `++a` is that `a++` increments the a variable after using it. `++a` increments the a variable before using it.
+The difference between `a++` and `++a` is that `a++` increments `a` after using it. `++a` increments `a` before using it.
 
 For example (see `increment1.c`):
 
