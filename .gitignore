@@ -53,3 +53,5 @@ dkms.conf
 
 # Miscellanious
 .DS_Store
+.vscode
+build
